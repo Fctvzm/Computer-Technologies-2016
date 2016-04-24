@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Paint
 {
-    public enum Tool { Pencil, Rectangle, Ellipse, Eraser, Line, Triangle, Brush };
+    public enum Tool { Pencil, Rectangle, Ellipse, Eraser, Line, Triangle, Brush, Romb };
 
     class Drawer
     {
@@ -22,7 +22,8 @@ namespace Paint
         public Tool tool;
         public GraphicsPath path;
         public GraphicsPath path_e;
-
+        public GraphicsPath path_2;
+        public GraphicsPath path_3;
         public Drawer(PictureBox p)
         {
             this.picture = p;
@@ -33,14 +34,30 @@ namespace Paint
         public void picturePaint(object sender, PaintEventArgs e)
         {
             if (path != null)
+            {
+                if (tool == Tool.Romb)
+                {
+                    e.Graphics.DrawPath(pen, path_e);
+                    e.Graphics.DrawPath(pen, path_2);
+                    e.Graphics.DrawPath(pen, path_3);
+                }
                 e.Graphics.DrawPath(pen, path);
+            }
         }
 
         public void saveLastPath ()
         {
             if (path != null)
+            {
                 myGraphics.DrawPath(pen, path);
-            path = null;
+                if (tool == Tool.Romb)
+                {
+                    myGraphics.DrawPath(pen, path_e);
+                    myGraphics.DrawPath(pen, path_2);
+                    myGraphics.DrawPath(pen, path_3);
+                }
+                path = null;
+            }
         }
 
         public void openImage (string fileName)
@@ -94,6 +111,23 @@ namespace Paint
                     myGraphics.FillPath(Brushes.White, path_e);
                     previous = current;
                     break;
+                case Tool.Romb:
+                    path = new GraphicsPath();
+                    path_e = new GraphicsPath();
+                    path_2 = new GraphicsPath();
+                    path_3 = new GraphicsPath();
+                    int dx = previous.X; int dy = previous.Y;
+                    if (previous.X > current.X)
+                        dx = current.X;
+                    if (previous.Y > current.Y)
+                        dy = current.Y;
+                    path.AddRectangle(new Rectangle(dx, dy, Math.Abs(current.X - previous.X), Math.Abs(current.Y - previous.Y)));
+                    path.AddRectangle(new Rectangle(dx + 50, dy - 50, Math.Abs(current.X - previous.X), Math.Abs(current.Y - previous.Y)));
+                    path.AddLine(new Point(previous.X, previous.Y), new Point(previous.X + 50,previous.Y-50));
+                    path_2.AddLine(new Point(current.X, previous.Y), new Point(current.X + 50, previous.Y - 50));
+                    path_e.AddLine(new Point(previous.X, current.Y), new Point(previous.X + 50, current.Y - 50));
+                    path_3.AddLine(new Point(current.X, current.Y), new Point(current.X + 50, current.Y - 50));
+                    break;
                 default:
                     break;
             }
@@ -102,11 +136,12 @@ namespace Paint
 
 
         Queue<Point> q = new Queue<Point>();
-        bool[,] used = new bool[339, 345];
+        bool[,] used;
         Color clickedColor;
 
         public void floodFill ()
         {
+            used = new bool[339, 345];
             clickedColor = image.GetPixel(previous.X, previous.Y);
             check(previous.X, previous.Y);
 
@@ -119,6 +154,7 @@ namespace Paint
                 check(p.X, p.Y + 1);
             }
             picture.Refresh();
+              
         }
 
         public void check(int x, int y)
@@ -132,6 +168,7 @@ namespace Paint
                     image.SetPixel(x, y, pen.Color);
                 }
             }
+
         }
     }
 }

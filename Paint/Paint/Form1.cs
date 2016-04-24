@@ -28,8 +28,10 @@ namespace Paint
         {
             draw.previous = e.Location;
             draw.getStarted = true;
-            if (draw.tool==Tool.Brush)
+            if (draw.tool == Tool.Brush) {
                 draw.floodFill();
+                draw.getStarted = false;
+            }
         }
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
@@ -108,6 +110,11 @@ namespace Paint
         private void Brush_Click (object sender, EventArgs e)
         {
             draw.tool = Tool.Brush;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            draw.tool = Tool.Romb;
         }
     }
 
