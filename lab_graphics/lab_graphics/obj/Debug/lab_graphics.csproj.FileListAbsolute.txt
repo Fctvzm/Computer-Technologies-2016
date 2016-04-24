@@ -1,0 +1,9 @@
+c:\users\admin\documents\visual studio 2015\Projects\lab_graphics\lab_graphics\bin\Debug\lab_graphics.exe.config
+c:\users\admin\documents\visual studio 2015\Projects\lab_graphics\lab_graphics\obj\Debug\lab_graphics.csprojResolveAssemblyReference.cache
+c:\users\admin\documents\visual studio 2015\Projects\lab_graphics\lab_graphics\obj\Debug\lab_graphics.Form1.resources
+c:\users\admin\documents\visual studio 2015\Projects\lab_graphics\lab_graphics\obj\Debug\lab_graphics.Properties.Resources.resources
+c:\users\admin\documents\visual studio 2015\Projects\lab_graphics\lab_graphics\obj\Debug\lab_graphics.csproj.GenerateResource.Cache
+c:\users\admin\documents\visual studio 2015\Projects\lab_graphics\lab_graphics\bin\Debug\lab_graphics.exe
+c:\users\admin\documents\visual studio 2015\Projects\lab_graphics\lab_graphics\bin\Debug\lab_graphics.pdb
+c:\users\admin\documents\visual studio 2015\Projects\lab_graphics\lab_graphics\obj\Debug\lab_graphics.exe
+c:\users\admin\documents\visual studio 2015\Projects\lab_graphics\lab_graphics\obj\Debug\lab_graphics.pdb
