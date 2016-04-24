@@ -48,6 +48,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.Brush = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -77,7 +78,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(366, 219);
+            this.button2.Location = new System.Drawing.Point(366, 230);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 2;
@@ -87,7 +88,7 @@
             // 
             // Rectangle
             // 
-            this.Rectangle.Location = new System.Drawing.Point(366, 142);
+            this.Rectangle.Location = new System.Drawing.Point(366, 114);
             this.Rectangle.Name = "Rectangle";
             this.Rectangle.Size = new System.Drawing.Size(75, 23);
             this.Rectangle.TabIndex = 3;
@@ -97,7 +98,7 @@
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(357, 335);
+            this.trackBar1.Location = new System.Drawing.Point(357, 326);
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(104, 45);
             this.trackBar1.TabIndex = 4;
@@ -188,7 +189,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(366, 180);
+            this.button4.Location = new System.Drawing.Point(366, 143);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 10;
@@ -198,7 +199,7 @@
             // 
             // Brush
             // 
-            this.Brush.Location = new System.Drawing.Point(366, 297);
+            this.Brush.Location = new System.Drawing.Point(366, 288);
             this.Brush.Name = "Brush";
             this.Brush.Size = new System.Drawing.Size(75, 23);
             this.Brush.TabIndex = 11;
@@ -208,19 +209,30 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(366, 113);
+            this.button6.Location = new System.Drawing.Point(366, 201);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 12;
-            this.button6.Text = "button6";
+            this.button6.Text = "Cube";
             this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button6.Click += new System.EventHandler(this.Cube_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(366, 172);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 13;
+            this.button7.Text = "Six";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.Six_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(473, 383);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.Brush);
             this.Controls.Add(this.button4);
@@ -267,6 +279,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button Brush;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
     }
 }
 

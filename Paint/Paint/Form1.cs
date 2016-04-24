@@ -112,9 +112,14 @@ namespace Paint
             draw.tool = Tool.Brush;
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void Cube_Click(object sender, EventArgs e)
         {
-            draw.tool = Tool.Romb;
+            draw.tool = Tool.Cube;
+        }
+
+        private void Six_Click(object sender, EventArgs e)
+        {
+            draw.tool = Tool.Six;
         }
     }
 

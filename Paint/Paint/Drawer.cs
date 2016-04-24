@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Paint
 {
-    public enum Tool { Pencil, Rectangle, Ellipse, Eraser, Line, Triangle, Brush, Romb };
+    public enum Tool { Pencil, Rectangle, Ellipse, Eraser, Line, Triangle, Brush, Cube, Six };
 
     class Drawer
     {
@@ -21,7 +21,7 @@ namespace Paint
         public Point previous;
         public Tool tool;
         public GraphicsPath path;
-        public GraphicsPath path_e;
+        public GraphicsPath path_1;
         public GraphicsPath path_2;
         public GraphicsPath path_3;
         public Drawer(PictureBox p)
@@ -35,9 +35,9 @@ namespace Paint
         {
             if (path != null)
             {
-                if (tool == Tool.Romb)
+                if (tool == Tool.Cube)
                 {
-                    e.Graphics.DrawPath(pen, path_e);
+                    e.Graphics.DrawPath(pen, path_1);
                     e.Graphics.DrawPath(pen, path_2);
                     e.Graphics.DrawPath(pen, path_3);
                 }
@@ -50,9 +50,9 @@ namespace Paint
             if (path != null)
             {
                 myGraphics.DrawPath(pen, path);
-                if (tool == Tool.Romb)
+                if (tool == Tool.Cube)
                 {
-                    myGraphics.DrawPath(pen, path_e);
+                    myGraphics.DrawPath(pen, path_1);
                     myGraphics.DrawPath(pen, path_2);
                     myGraphics.DrawPath(pen, path_3);
                 }
@@ -105,15 +105,15 @@ namespace Paint
                     path.AddPolygon(triangle);
                     break;
                 case Tool.Eraser:
-                    path_e = new GraphicsPath();
+                    path_1 = new GraphicsPath();
                     int width = (int)pen.Width;
-                    path_e.AddRectangle(new Rectangle(previous.X, previous.Y, width+10, width+10));
-                    myGraphics.FillPath(Brushes.White, path_e);
+                    path_1.AddRectangle(new Rectangle(previous.X, previous.Y, width+10, width+10));
+                    myGraphics.FillPath(Brushes.White, path_1);
                     previous = current;
                     break;
-                case Tool.Romb:
+                case Tool.Cube:
                     path = new GraphicsPath();
-                    path_e = new GraphicsPath();
+                    path_1 = new GraphicsPath();
                     path_2 = new GraphicsPath();
                     path_3 = new GraphicsPath();
                     int dx = previous.X; int dy = previous.Y;
@@ -121,12 +121,31 @@ namespace Paint
                         dx = current.X;
                     if (previous.Y > current.Y)
                         dy = current.Y;
-                    path.AddRectangle(new Rectangle(dx, dy, Math.Abs(current.X - previous.X), Math.Abs(current.Y - previous.Y)));
-                    path.AddRectangle(new Rectangle(dx + 50, dy - 50, Math.Abs(current.X - previous.X), Math.Abs(current.Y - previous.Y)));
-                    path.AddLine(new Point(previous.X, previous.Y), new Point(previous.X + 50,previous.Y-50));
-                    path_2.AddLine(new Point(current.X, previous.Y), new Point(current.X + 50, previous.Y - 50));
-                    path_e.AddLine(new Point(previous.X, current.Y), new Point(previous.X + 50, current.Y - 50));
-                    path_3.AddLine(new Point(current.X, current.Y), new Point(current.X + 50, current.Y - 50));
+                    path.AddRectangle(new Rectangle
+                        (dx, dy, Math.Abs(current.X - previous.X), Math.Abs(current.Y - previous.Y)));
+                    path.AddRectangle(new Rectangle
+                        (dx + 50, dy - 50, Math.Abs(current.X - previous.X), Math.Abs(current.Y - previous.Y)));
+                    path.AddLine(new Point(previous.X, previous.Y),
+                        new Point(previous.X + 50, previous.Y - 50));
+                    path_1.AddLine(new Point(previous.X, current.Y), 
+                        new Point(previous.X + 50, current.Y - 50));
+                    path_2.AddLine(new Point(current.X, previous.Y), 
+                        new Point(current.X + 50, previous.Y - 50));
+                    path_3.AddLine(new Point(current.X, current.Y), 
+                        new Point(current.X + 50, current.Y - 50));
+                    break;
+                case Tool.Six:
+                    path = new GraphicsPath();
+                    Point[] p =
+                    {
+                        new Point(previous.X, previous.Y),
+                        new Point(current.X,current.Y-2*(current.Y-previous.Y)/3),
+                        new Point(current.X,current.Y),
+                        new Point(previous.X,current.Y+(current.Y-previous.Y)/3),
+                        new Point(2*previous.X-current.X,current.Y),
+                        new Point(2*previous.X-current.X,current.Y-2*(current.Y-previous.Y)/3)
+                    };
+                    path.AddPolygon(p);
                     break;
                 default:
                     break;
