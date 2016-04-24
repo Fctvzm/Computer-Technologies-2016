@@ -1,0 +1,6 @@
+c:\users\admin\documents\visual studio 2015\Projects\Snakegame\Snakegame\bin\Debug\Snakegame.exe.config
+c:\users\admin\documents\visual studio 2015\Projects\Snakegame\Snakegame\obj\Debug\Snakegame.csprojResolveAssemblyReference.cache
+c:\users\admin\documents\visual studio 2015\Projects\Snakegame\Snakegame\bin\Debug\Snakegame.exe
+c:\users\admin\documents\visual studio 2015\Projects\Snakegame\Snakegame\bin\Debug\Snakegame.pdb
+c:\users\admin\documents\visual studio 2015\Projects\Snakegame\Snakegame\obj\Debug\Snakegame.exe
+c:\users\admin\documents\visual studio 2015\Projects\Snakegame\Snakegame\obj\Debug\Snakegame.pdb
