@@ -1,0 +1,9 @@
+c:\users\admin\documents\visual studio 2015\Projects\end_term\end_term\bin\Debug\end_term.exe.config
+c:\users\admin\documents\visual studio 2015\Projects\end_term\end_term\bin\Debug\end_term.exe
+c:\users\admin\documents\visual studio 2015\Projects\end_term\end_term\bin\Debug\end_term.pdb
+c:\users\admin\documents\visual studio 2015\Projects\end_term\end_term\obj\Debug\end_term.csprojResolveAssemblyReference.cache
+c:\users\admin\documents\visual studio 2015\Projects\end_term\end_term\obj\Debug\end_term.Form1.resources
+c:\users\admin\documents\visual studio 2015\Projects\end_term\end_term\obj\Debug\end_term.Properties.Resources.resources
+c:\users\admin\documents\visual studio 2015\Projects\end_term\end_term\obj\Debug\end_term.csproj.GenerateResource.Cache
+c:\users\admin\documents\visual studio 2015\Projects\end_term\end_term\obj\Debug\end_term.exe
+c:\users\admin\documents\visual studio 2015\Projects\end_term\end_term\obj\Debug\end_term.pdb
