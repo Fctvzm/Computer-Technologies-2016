@@ -1,0 +1,9 @@
+c:\users\admin\documents\visual studio 2015\Projects\paintWithMove\paintWithMove\bin\Debug\paintWithMove.exe.config
+c:\users\admin\documents\visual studio 2015\Projects\paintWithMove\paintWithMove\bin\Debug\paintWithMove.exe
+c:\users\admin\documents\visual studio 2015\Projects\paintWithMove\paintWithMove\bin\Debug\paintWithMove.pdb
+c:\users\admin\documents\visual studio 2015\Projects\paintWithMove\paintWithMove\obj\Debug\paintWithMove.csprojResolveAssemblyReference.cache
+c:\users\admin\documents\visual studio 2015\Projects\paintWithMove\paintWithMove\obj\Debug\paintWithMove.Form1.resources
+c:\users\admin\documents\visual studio 2015\Projects\paintWithMove\paintWithMove\obj\Debug\paintWithMove.Properties.Resources.resources
+c:\users\admin\documents\visual studio 2015\Projects\paintWithMove\paintWithMove\obj\Debug\paintWithMove.csproj.GenerateResource.Cache
+c:\users\admin\documents\visual studio 2015\Projects\paintWithMove\paintWithMove\obj\Debug\paintWithMove.exe
+c:\users\admin\documents\visual studio 2015\Projects\paintWithMove\paintWithMove\obj\Debug\paintWithMove.pdb
